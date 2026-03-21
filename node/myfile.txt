@@ -1,0 +1,68 @@
+node --watch app.js
+
+this is the learning of the node. i start the learning of the node. first i learn the https then os and then fs
+
+
+Key Differences
+Node.js and browsers both run JavaScript, but they have different environments and capabilities.
+
+Node.js is designed for server-side development, while browsers are for client-side applications.
+
+APIs: Node.js provides APIs for file system, networking, and OS, which browsers do not.
+Browsers provide DOM, fetch, and UI APIs not available in Node.js.
+Global Objects: Node.js uses global; browsers use window or self.
+Modules: Node.js uses CommonJS (require) and ES modules (import); browsers use ES modules or plain <script> tags.
+Security: Browsers run in a sandbox with limited access; Node.js has full access to the file system and network.
+Event Loop: Both environments use an event loop, but Node.js has additional APIs for timers, process, etc.
+Environment Variables: Node.js can access environment variables (process.env); browsers cannot.
+Package Management: Node.js uses npm/yarn; browsers use CDNs or bundlers.
+
+
+Global Objects
+// Node.js
+global.mylet = 42;
+console.log(global.mylet); // 42
+
+// Browser
+window.mylet = 42;
+console.log(window.mylet); // 42
+
+
+
+File Access
+// Node.js
+const fs = require('fs');
+fs.readFile('myfile.txt', 'utf8', (err, data) => {
+  if (err) throw err;
+  console.log(data);
+});
+
+// Browser
+// Not allowed for security reasons
+
+
+
+HTTP Requests
+// Node.js
+const https = require('https');
+https.get('https://example.com', res => {
+  let data = '';
+  res.on('data', chunk => data += chunk);
+  res.on('end', () => console.log(data));
+});
+
+// Browser
+fetch('https://example.com')
+  .then(response => response.text())
+  .then(console.log);
+
+
+
+Modules
+// Node.js (CommonJS)
+const fs = require('fs');
+
+
+// Node.js & Browser (ES Modules)
+// import fs from 'fs'; // Node.js only, not browser
+// import _ from 'https://cdn.jsdelivr.net/npm/lodash-es/lodash.js'; // Browser
