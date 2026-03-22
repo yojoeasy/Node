@@ -1,0 +1,28 @@
+{
+  "name": "project_management",
+  "version": "1.0.0",
+  "description": "project managememt",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "API",
+    "backend",
+    "learning"
+  ],
+  "author": "Yogesh Joshi",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "3.8.1"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "ejs": "^5.0.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.3.1"
+  }
+}
