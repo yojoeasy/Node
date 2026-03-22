@@ -13,4 +13,16 @@ const connectDB = async () => {
     }
 };
 
+const getUserFromDB = async () => {
+    try {
+        const user = await User.findById(req.user._id);
+        return user;
+    } catch (error) {
+        console.error("Error fetching user:", error);
+        throw error;
+    }
+};
+
+export { getUserFromDB };
+
 export default connectDB;
