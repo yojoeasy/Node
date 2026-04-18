@@ -1,4 +1,4 @@
-console.log("b.js is running");
+// console.log("b.js is running");
 
 for (let i = 2500000000; i < 5000000000; i++) {
     if (i === 2500000000 + 2500000000 / 2) {
@@ -6,4 +6,4 @@ for (let i = 2500000000; i < 5000000000; i++) {
     }
 }
 
-console.log("b.js is done");
+// console.log("b.js is done");
