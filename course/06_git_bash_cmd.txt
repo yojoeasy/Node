@@ -1,0 +1,18 @@
+cmd //c tasklist
+
+cmd //c taskkill //PID <PID> //F
+
+cmd //c tasklist | grep <PID>
+
+cmd //c taskkill //IM chrome.exe //F
+
+cmd //c netstat -ano | findstr :3000
+
+ps
+
+ps -ef | grep node
+
+wsl --install -d Ubuntu
+
+sudo apt update
+sudo apt install htop
