@@ -3,8 +3,14 @@ const fs = require('fs');
 const path = require('path');
 
 const server = http.createServer((req, res) => {
-  // Get the file path from the URL
-  const filePath = path.join(__dirname, req.url);
+  // Resolve the requested path, then verify it can't escape __dirname
+  // (req.url is attacker-controlled, so path.join alone is not enough guard against ../ traversal)
+  const filePath = path.resolve(__dirname, '.' + decodeURIComponent(req.url));
+  if (!filePath.startsWith(__dirname + path.sep)) {
+    res.statusCode = 403;
+    res.end('Forbidden');
+    return;
+  }
 
   // Check if file exists
   fs.access(filePath, fs.constants.F_OK, (err) => {

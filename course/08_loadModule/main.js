@@ -2,8 +2,8 @@ const { clear } = require("console");
 const path = require("path");
 const vm = require("vm");
 
-fs = require("fs");
-loadFile = loadModule('./load_file.yog');
+const fs = require("fs");
+let loadFile = loadModule('./load_file.yog');
 loadFile = loadModule1('./load_file.js');
 loadFile = accurateLoadModule('./test.js');
 
